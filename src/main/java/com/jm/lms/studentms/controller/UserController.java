@@ -119,9 +119,9 @@ public class UserController {
 		Boolean isPresent=userService.deleteById(id);
 
 		if (isPresent) {
-			return id + " is deleted";
+			return id + " is deleted ";
 		}
-		return id + " not present";
+		return id + " not present ";
 	}
 	
 	@DeleteMapping("/deleteUserByEmailAndPassword")
