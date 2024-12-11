@@ -5,7 +5,7 @@ com\jm\lms\studentms\config\Config.class
 com\jm\lms\studentms\model\Student.class
 com\jm\lms\studentms\repository\TaskRepository.class
 com\jm\lms\studentms\LmsStudentManagementApplication.class
-com\jm\lms\studentms\model\Task.class
 com\jm\lms\studentms\repository\StudentRepository.class
 com\jm\lms\studentms\service\TaskService.class
+com\jm\lms\studentms\model\TaskDetails.class
 com\jm\lms\studentms\service\StudentService.class
