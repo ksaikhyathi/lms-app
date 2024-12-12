@@ -8,17 +8,22 @@ import org.springframework.stereotype.Service;
 import com.jm.lms.studentms.model.Course;
 import com.jm.lms.studentms.repository.CourseViewCourseListRepository;
 
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Service
 public class CourseViewCourseListService {
 	@Autowired
 	private CourseViewCourseListRepository repository;
 
 	public List<Course> viewAllcourses() {
-		return repository.findAll();
+		List<Course> course= repository.findAll();
+		log.info("Response from courses"+course);
+		return course;
 	}
 	
 	public Course addCourse(Course course) {
-		return repository.save(course);
+		Course courses=repository.save(course);
+		return courses;
 	}
 
 
