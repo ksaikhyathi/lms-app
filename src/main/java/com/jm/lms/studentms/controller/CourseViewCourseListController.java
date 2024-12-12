@@ -11,25 +11,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jm.lms.studentms.model.Course;
-import com.jm.lms.studentms.service.CourseService;
+import com.jm.lms.studentms.service.CourseViewCourseListService;
+
+
+
 
 @RestController
 @RequestMapping("api/v1/course")
-public class CourseController {
+public class CourseViewCourseListController {
 	
 	@Autowired
-	private CourseService service;
+	private  CourseViewCourseListService service;
 	
-	@PostMapping("add")
+	@GetMapping
+	public ResponseEntity<List<Course>> viewAllcourses(){
+		List<Course>course =service.viewAllcourses();
+		return ResponseEntity.ok(course);
+	}
+	
+	@PostMapping("/add")
 	public ResponseEntity<Course> addCourse(@RequestBody Course course){
 		Course course1=service.addCourse(course);
 		return ResponseEntity.ok(course1);	
 	}
 	
-	@GetMapping
-	public ResponseEntity<List<Course>> getAll(){
-		List<Course>course =service.getAll();
-		return ResponseEntity.ok(course);
-	}
+
 
 }
