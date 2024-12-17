@@ -25,11 +25,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!--<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>-->
-
 		<!-- Validatio - POJO Class.. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -42,13 +37,6 @@
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
 
-		<!-- Enable XML response -->
-		<!-- <dependency> -->
-		<!-- <groupId>com.fasterxml.jackson.dataformat</groupId> -->
-		<!-- <artifactId>jackson-dataformat-xml</artifactId> -->
-		<!-- <version>2.14.1</version> -->
-		<!-- </dependency> -->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -58,21 +46,23 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>2.1.214</version>
+			<version>2.2.220</version>
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- OpenAPI for API Specifications -->
+		<!--&lt;!&ndash; OpenAPI for API Specifications &ndash;&gt;
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.0.0</version>
 		</dependency>
-
+-->
 		<!-- Dev Tools - Automatic Refresh App When Save -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
 
 		<dependency>
@@ -80,7 +70,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
