@@ -11,7 +11,7 @@ import com.jm.lms.studentms.model.TopicList;
 import com.jm.lms.studentms.repository.TopicListRespository;
 
 @Service
-public class TopicListService {
+public class ViewTopicListService {
 
 	@Autowired
 	private TopicListRespository topicListRepository;
