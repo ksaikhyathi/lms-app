@@ -22,7 +22,7 @@ import com.jm.lms.studentms.service.TopicListService;
 public class ViewTopicListController {
 
 	@Autowired
-	private TopicListService topicListService;
+	private ViewTopicListService topicListService;
 
 	@GetMapping("/TopicList/{topicTitle}")
 	public ResponseEntity<Optional<TopicList>> getTopicList(@PathVariable("topicTitle") String topicTitle) {
