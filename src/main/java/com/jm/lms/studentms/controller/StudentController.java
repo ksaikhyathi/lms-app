@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/v1/lms/students")
+@RequestMapping(value = "api/v1/lms/students")
 public class StudentController {
 
     private final StudentService studentService;
@@ -25,13 +25,14 @@ public class StudentController {
         return ResponseEntity.ok(newStudent);
     }
 
+
     @GetMapping()
     public ResponseEntity<List<Student>> getAllStudents() {
         List<Student> students = studentService.getAllStudents();
         return ResponseEntity.ok(students);
     }
 
-    @GetMapping("/find/id/{studentId}")
+    @GetMapping(value = "/find/id/{studentId}")
     public ResponseEntity<Optional<Student>> findStudentById(@PathVariable("studentId") Long id) {
         Optional<Student> student = studentService.findStudentById(id);
         return ResponseEntity.ok(student);
@@ -47,5 +48,12 @@ public class StudentController {
     public ResponseEntity<?> deleteStudentById(@PathVariable("studentId") Long id) {
         studentService.deleteStudentById(id);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    }
+
+
+    @GetMapping(value = "/find/firstName/{studentName}")
+    public ResponseEntity<Optional<Student>> findStudentByName(@PathVariable("studentName") String firstName) {
+        Optional<Student> student = studentService.findStudentByFirstName(firstName);
+        return ResponseEntity.ok(student);
     }
 }

@@ -19,20 +19,16 @@ public class Student {
     private Long id;
 
     @Column(name = "first_name", nullable = false)
-    @NotBlank(message = "{student.firstName.notBlank}")
     private String firstName;
 
     @Column(name = "last_name", nullable = false)
-    @NotBlank(message = "{student.lastName.notBlank}")
     private String lastName;
 
     @Column(name = "date_of_birth", nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @NotNull(message = "{student.dateOfBirth.notNull}")
     private LocalDate dateOfBirth;
 
     @Column(name = "email", nullable = false)
-    @NotBlank(message = "{student.email.notBlank}")
     private String email;
 
     public Student() {
