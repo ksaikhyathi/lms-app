@@ -45,7 +45,7 @@ public class TopicListController {
 	}
 	
 	 @PutMapping("/{topicTitle}")
-	    public ResponseEntity<TopicList> updateStudentById(@RequestBody TopicList topicList, @PathVariable("topicTitle") String topicTitle) {
+	    public ResponseEntity<TopicList> updateTopicByTitle(@RequestBody TopicList topicList, @PathVariable("topicTitle") String topicTitle) {
 	        TopicList updated = topicListService.updateTopicByTitle(topicList, topicTitle);
 	        return ResponseEntity.accepted().body(updated);
 	    }
