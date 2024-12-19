@@ -19,7 +19,7 @@ import com.jm.lms.studentms.service.TopicListService;
 
 @RestController
 @RequestMapping(("api/v1/lms/Topics"))
-public class TopicListController {
+public class ViewTopicListController {
 
 	@Autowired
 	private TopicListService topicListService;
