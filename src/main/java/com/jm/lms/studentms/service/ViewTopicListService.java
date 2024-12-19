@@ -14,7 +14,7 @@ import com.jm.lms.studentms.repository.TopicListRespository;
 public class ViewTopicListService {
 
 	@Autowired
-	private TopicListRespository topicListRepository;
+	private ViewTopicListRespository topicListRepository;
 
 	public Optional<TopicList> getTopicListByTitle(String topicTitle) {
 		return topicListRepository.findByTopicTitle(topicTitle);
