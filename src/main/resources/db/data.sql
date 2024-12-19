@@ -100,3 +100,11 @@ VALUES (2, 'TECHNOLOGY', 'JAVA', 'LOOPS', 'COMPLETED', '2024-11-12', '2024-11-14
 INSERT INTO TOPIC_LIST (ID, TOPIC_CATEGEORY, TOPIC_TITLE, TOPIC_CONCEPT, TOPIC_STATUS, STARTING_DATE, COMPLETION_DATE) 
 VALUES (3, 'TECHNOLOGY', 'JAVA', 'CONDITIONS', 'COMPLETED', '2024-11-16', '2024-11-19');
 
+INSERT INTO ENROLLCOURSE(id, course_name, course_username, course_password, course_duration) VALUES 
+					 (1, 'aws','Harsha_sree','Harsha@143','3 months');
+
+INSERT INTO ENROLLCOURSE(id, course_name, course_username, course_password, course_duration) VALUES 
+				 	 (2, 'java', 'Reva_sree','Revasree@143','6 months');
+				 	 
+INSERT INTO ENROLLCOURSE(id, course_name, course_username, course_password, course_duration) VALUES 
+					 (3, 'python', 'Honey', 'Honey@143','4 months');
