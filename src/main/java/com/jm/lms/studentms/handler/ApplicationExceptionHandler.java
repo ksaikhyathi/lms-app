@@ -1,4 +1,4 @@
-package com.jm.lms.studentms.advice;
+package com.jm.lms.studentms.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
