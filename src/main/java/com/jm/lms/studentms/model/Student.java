@@ -1,11 +1,11 @@
 package com.jm.lms.studentms.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.crypto.Mac;
 import java.time.LocalDate;
 
 @Entity
@@ -18,7 +18,9 @@ public class Student {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "first_name", nullable = false)
+    @NotBlank(message = "first name cant be empty or null")
+    @Size(max = 8, min = 2, message = "first name must be between 2 and 8 characters")
+    @Column(name = "first_name")
     private String firstName;
 
     @Column(name = "last_name", nullable = false)
@@ -28,8 +30,13 @@ public class Student {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
 
+    @Email(message = "Email must be valid")
     @Column(name = "email", nullable = false)
     private String email;
+
+
+    @Column(name = "mobile_number")
+    private String mobileNumber;
 
     public Student() {
     }

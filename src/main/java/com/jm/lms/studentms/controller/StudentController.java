@@ -2,6 +2,7 @@ package com.jm.lms.studentms.controller;
 
 import com.jm.lms.studentms.model.Student;
 import com.jm.lms.studentms.service.StudentService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class StudentController {
     }
 
     @PostMapping
-    public ResponseEntity<Student> saveStudent(@RequestBody Student student) {
+    public ResponseEntity<Student> saveStudent(@RequestBody @Valid Student student) {
         Student newStudent = studentService.saveStudent(student);
         return ResponseEntity.ok(newStudent);
     }
