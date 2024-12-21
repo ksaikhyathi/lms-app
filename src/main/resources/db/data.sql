@@ -110,6 +110,7 @@ INSERT INTO ENROLLCOURSE(id, course_name, course_username, course_password, cour
 INSERT INTO ENROLLCOURSE(id, course_name, course_username, course_password, course_duration) VALUES 
 					 (3, 'python', 'Honey', 'Honey@143','4 months');
 					 
+           
 INSERT INTO signup (id, username, password, email)
 	VALUES (1, 'Nandini', 'nandhu123', 'nandininandu@gmail.com');
 
@@ -121,6 +122,8 @@ INSERT INTO signup (id, username, password, email)
     
     
 INSERT INTO USERS (ID, USER_NAME, PASSWORD, EMAIL, PHONE_NUMBER, JOB_ROLE, DATE_OF_BIRTH, GENDER,USER_ADDRESS) 
+
+INSERT INTO USERS (ID, USER_NAME, PASSWORD, EMAIL, PHONE_NUMBER, JOB_ROLE, DATE_OF_BIRTH, GENDER,USER_ADDRESS)
 VALUES (1, 'THARUN', 'THARUN@123', 'ARJUNSHARMA@GMAIL.COM', '9876543210', 'SOFTWARE ENGINEER', '2003-03-21', 'MALE', 'BENGALURU');
 
 INSERT INTO USERS (ID, USER_NAME, PASSWORD, EMAIL, PHONE_NUMBER, JOB_ROLE, DATE_OF_BIRTH, GENDER,USER_ADDRESS) 
