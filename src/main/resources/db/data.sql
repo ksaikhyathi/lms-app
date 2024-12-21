@@ -110,13 +110,13 @@ INSERT INTO ENROLLCOURSE(id, course_name, course_username, course_password, cour
 INSERT INTO ENROLLCOURSE(id, course_name, course_username, course_password, course_duration) VALUES 
 					 (3, 'python', 'Honey', 'Honey@143','4 months');
 					 
-INSERT INTO users (id, username, password, email)
+INSERT INTO signup (id, username, password, email)
 	VALUES (1, 'Nandini', 'nandhu123', 'nandininandu@gmail.com');
 
-INSERT INTO users (id, username, password, email) 
+INSERT INTO signup (id, username, password, email) 
 	VALUES (2, 'Ramya', 'ramya456', 'athurramya654@gmail.com');
 
-INSERT INTO users (id, username, password, email) 
+INSERT INTO signup (id, username, password, email) 
 	VALUES (3, 'Poojitha', 'pooji789', 'bollupoojitha@gmail.com');
     
     
@@ -149,3 +149,14 @@ VALUES (9, 'MANISHPATIL', 'MANISH123', 'MANISHPATIL@GMAIL.COM', '9890123456', 'H
 
 INSERT INTO USERS (ID, USER_NAME, PASSWORD, EMAIL, PHONE_NUMBER, JOB_ROLE, DATE_OF_BIRTH, GENDER, USER_ADDRESS) 
 VALUES (10, 'SNEHAREDDY', 'SNEHAREDDY!', 'SNEHAREDDY@GMAIL.COM', '9901234567', 'SYSTEM ANALYST', '1996-03-13', 'FEMALE', 'BENGALURU');
+
+
+INSERT INTO LESSONDETAILS (id, lesson_name, lesson_description) 
+VALUES (1, 'INTRODUCTION TO PROGRAMMING', 'LEARN THE BASICS OF PROGRAMMING');
+
+INSERT INTO LESSONDETAILS (id, lesson_name, lesson_description) 
+VALUES (2, 'DATA STRUCTURE AND ALGORITHM', 'FUNDAMENTALS OF DATA STRUCTURE');
+
+INSERT INTO LESSONDETAILS (id, lesson_name, lesson_description) 
+VALUES (3, 'OPERATING SYSTEM', 'PRINCIPALS OF THE OPERATING SYSTEMS');
+
