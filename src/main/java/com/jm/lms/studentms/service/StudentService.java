@@ -1,7 +1,9 @@
 package com.jm.lms.studentms.service;
 
+import com.jm.lms.studentms.exception.StudentNotFoundException;
 import com.jm.lms.studentms.model.Student;
 import com.jm.lms.studentms.repository.StudentRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,6 +12,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class StudentService {
 
@@ -29,10 +32,18 @@ public class StudentService {
     }
 
     public Optional<Student> findStudentById(Long id) {
+        Optional<Student> checkIfStudentWithIdExist = studentRepository.findById(id);
+        if (checkIfStudentWithIdExist.isEmpty()) {
+            throw new StudentNotFoundException("Student can not find with id: " + id + " does not exist.");
+        }
         return studentRepository.findStudentById(id);
     }
 
     public Optional<Student> findStudentByFirstName(String firstName) {
+        Optional<Student> checkIfStudentWithIdExist = studentRepository.findStudentByFirstName(firstName);
+        if (checkIfStudentWithIdExist.isEmpty()) {
+            throw new StudentNotFoundException("Student can not find with firstName: " + firstName + " does not exist.");
+        }
         return studentRepository.findStudentByFirstName(firstName);
     }
 
@@ -71,6 +82,10 @@ public class StudentService {
     }
 
     public void deleteStudentById(Long id) {
+        Optional<Student> checkIfStudentWithIdExist = studentRepository.findById(id);
+        if (checkIfStudentWithIdExist.isEmpty()) {
+            throw new StudentNotFoundException("Student can not be deleted because student with id: " + id + " does not exist.");
+        }
         studentRepository.deleteById(id);
     }
 }
