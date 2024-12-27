@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jm.lms.studentms.model.SignUp;
 import com.jm.lms.studentms.service.SignUpService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("api/v1/lms/signup")
 public class SignUpServiceController {
@@ -19,7 +21,7 @@ public class SignUpServiceController {
 private SignUpService signUpService;
 
 @PostMapping("/adduser")
-public ResponseEntity<String> signUp(@RequestBody SignUp signup) {
+public ResponseEntity<String> signUp(@RequestBody @Valid SignUp signup) {
     String result = signUpService.signUp(signup); 
 
     if (result.equals("Username already exists.")) {
