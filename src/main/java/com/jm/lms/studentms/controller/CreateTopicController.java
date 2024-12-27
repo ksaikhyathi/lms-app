@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jm.lms.studentms.model.CreateTopic;
 import com.jm.lms.studentms.service.CreateTopicService;
 
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -30,7 +31,7 @@ public class CreateTopicController {
 	private CreateTopicService createTopicService;
 	
 	@PostMapping("/addTopic")
-	public ResponseEntity<CreateTopic> addTopic(@RequestBody CreateTopic topic){
+	public ResponseEntity<CreateTopic> addTopic(@RequestBody @Valid CreateTopic topic){
 		log.info("Posting data into the database. {}", topic);
 		CreateTopic topics = createTopicService.addTopic(topic);
 		log.info("Posted the data into database.CreateTopic:{}", topics);
