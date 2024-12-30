@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jm.lms.studentms.model.EnrollCourse;
 import com.jm.lms.studentms.service.EnrollCourseService;
 
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -25,7 +26,7 @@ public class EnrollCourseController {
 	        this.enrollCourseService = enrollCourseService;
 	    }
 	 @PostMapping("/enroll")
-	    public ResponseEntity<EnrollCourse> saveEnrollCourse(@RequestBody EnrollCourse enrollcourse) {
+	    public ResponseEntity<EnrollCourse> saveEnrollCourse(@RequestBody @Valid  EnrollCourse enrollcourse) {
 		 log.info("Enrollcourse"+enrollcourse);
 	        EnrollCourse newEnroll = enrollCourseService.saveEnrollCourse(enrollcourse);
 	        return ResponseEntity.ok(newEnroll);
