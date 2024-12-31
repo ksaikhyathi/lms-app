@@ -8,6 +8,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
@@ -22,12 +24,13 @@ public class EditCourse {
 	@Column(name = "id")
 	private Long id;
 
+	@NotBlank(message = "course name cant be empty or null")
 	@Column(name = "course_name")
 	private String courseName;
 
 	@Column(name = "course_duriation")
 	private String courseDuriation;
-
+	
 	@Column(name = "course_price")
 	private Long coursePrice;
 
